@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+<?xml-stylesheet type="text/css" href="forXML.css"?>
+
+<films>
+
+<table-header>
+<ntitle>Название фильма</ntitle>
+<ntime>Длительность</ntime>
+<nlimit>Возрастное ограничение</nlimit>
+</table-header>
+
+<film>
+<title>Бойцовский клуб</title>
+<time>139 мин</time>
+<limit>18+</limit>
+</film>
+
+<film>
+<title>Дрянные девчонки</title>
+<time>97 мин</time>
+<limit>18+</limit>
+</film>
+
+<film>
+<title>Реквием по мечте</title>
+<time>102 мин</time>
+<limit>18+</limit>
+</film>
+
+<film>
+<title>Рататуй</title>
+<time>111 мин</time>
+<limit>0+</limit>
+</film>
+
+<film>
+<title>Титаник</title>
+<time>194 мин</time>
+<limit>12+</limit>
+</film>
+
+<film>
+<title>Одиннадцать друзей Оушена</title>
+<time>116 мин</time>
+<limit>12+</limit>
+</film>
+
+<film>
+<title>Корпорация монстров</title>
+<time>92 мин</time>
+<limit>0+</limit>
+</film>
+
+<film>
+<title>Пираты Карибского моря: проклятие Черной Жемчужины</title>
+<time>143 мин</time>
+<limit>12+</limit>
+</film>
+
+<film>
+<title>Коллекционер 2</title>
+<time>82 мин</time>
+<limit>18+</limit>
+</film>
+
+<film>
+<title>Гордость и предубеждение</title>
+<time>129 мин</time>
+<limit>12+</limit>
+</film>
+
+<film>
+<title>Сумерки. Сага. Новолуние</title>
+<time>130 мин</time>
+<limit>18+</limit>
+</film>
+
+<film>
+<title>Американский психопат</title>
+<time>102 мин</time>
+<limit>18+</limit>
+</film>
+
+<film>
+<title>Тело Дженифер</title>
+<time>102 мин</time>
+<limit>18+</limit>
+</film>
+
+<film>
+<title>Дневник баскетболиста</title>
+<time>102 мин</time>
+<limit>18+</limit>
+</film>
+
+<film>
+<title>Знакомьтесь, Джо Блэк</title>
+<time>178 мин</time>
+<limit>18+</limit>
+</film>
+
+<film>
+<title>Прерванная жизнь</title>
+<time>127 мин</time>
+<limit>18+</limit>
+</film>
+
+<film>
+<title>Шрэк 2</title>
+<time>93 мин</time>
+<limit>0+</limit>
+</film>
+
+<film>
+<title>Пункт назначения</title>
+<time>98 мин</time>
+<limit>18+</limit>
+</film>
+
+<film>
+<title>Шесть демонов Эмили Роуз</title>
+<time>119 мин</time>
+<limit>18+</limit>
+</film>
+
+<film>
+<title>Вечное сияние чистого разума</title>
+<time>108 мин</time>
+<limit>18+</limit>
+</film>
+
+<film>
+<title>Труп невесты</title>
+<time>77 мин</time>
+<limit>12+</limit>
+</film>
+
+<film>
+<title>Пила 2</title>
+<time>93 мин</time>
+<limit>18+</limit>
+</film>
+
+</films>
+

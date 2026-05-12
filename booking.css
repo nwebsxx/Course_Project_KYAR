@@ -1,0 +1,829 @@
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif, -apple-system, BlinkMacSystemFont, "Helvetica Neue", Tahoma, sans-serif;
+  margin: 0;
+  background: url(background.jpg);
+  padding-top: 100px;
+}
+
+button, input[type=submit], input[type=reset] {
+  cursor: pointer;
+  font-family: inherit;
+}
+
+button, .button, .date-btn, .time-btn, .confirm-btn {
+  background-color: darkred;
+  color: white;
+  border: 2px solid white;
+}
+
+input, textarea {
+  font-family: inherit;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+html body {
+  background: url(background.jpg);
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  padding-top: 100px;
+  margin: 0;
+}
+html body .navigation {
+  height: 70px;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.75);
+  z-index: 1000;
+  padding: 15px 0 5px 0;
+  margin: 0;
+  border-bottom: 3px solid rgba(139, 0, 0, 0.547);
+}
+html body .navigation nav {
+  display: flex;
+  justify-content: flex-end;
+  margin-right: 100px;
+}
+html body .navigation ul {
+  list-style-type: none;
+  display: inline-flex;
+  gap: 35px;
+}
+html body .navigation a {
+  text-decoration: none;
+  display: inline-block;
+  font-size: 24px;
+  font-weight: 500;
+  color: white;
+}
+html body .navigation a:hover {
+  color: rgba(177, 62, 62, 0.547);
+}
+html body .navigation a:active {
+  color: rgba(115, 2, 2, 0.436);
+}
+html body .navigation .logo-wrapper {
+  position: absolute;
+  left: 90px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+html body .navigation .logo-wrapper .logo-svg {
+  display: block;
+  transition: transform 0.3s ease;
+}
+html body .navigation .logo-wrapper .logo-svg:hover {
+  transform: scale(1.05);
+}
+html body .navigation .burger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 1001;
+}
+html body .navigation .burger span {
+  width: 28px;
+  height: 3px;
+  background: white;
+  margin: 4px 0;
+  transition: 0.3s;
+  border-radius: 3px;
+}
+html body .navigation .burger.active span:nth-child(1) {
+  transform: rotate(45deg) translate(8px, 8px);
+}
+html body .navigation .burger.active span:nth-child(2) {
+  opacity: 0;
+}
+html body .navigation .burger.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(8px, -8px);
+}
+@media (max-width: 1024px) {
+  html body .navigation .burger {
+    display: flex;
+  }
+  html body .navigation nav {
+    position: fixed;
+    top: 92px;
+    left: -100%;
+    width: 280px;
+    height: calc(100vh - 92px);
+    background: black;
+    transition: left 0.3s;
+    z-index: 1000;
+    border-right: 2px solid darkred;
+    margin-right: 0;
+  }
+  html body .navigation nav.active {
+    left: 0;
+  }
+  html body .navigation nav ul {
+    flex-direction: column;
+    padding: 30px;
+    gap: 20px;
+  }
+  html body .navigation .logo-wrapper {
+    left: 15px;
+  }
+  html body .navigation .logo-svg {
+    width: 240px;
+    height: 100px;
+  }
+}
+@media (max-width: 768px) {
+  html body .navigation .logo-svg {
+    width: 240px;
+    height: 120px;
+  }
+}
+html body main {
+  margin-top: 70px;
+  min-height: 72vh;
+}
+html body main .search {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+html body main .search i {
+  color: white;
+  margin-right: 10px;
+  font-size: 20px;
+}
+html body main .search input {
+  border: 2px solid white;
+  border-radius: 15px;
+  font-size: 22px;
+  background-color: darkred;
+  padding: 10px 15px;
+  width: 300px;
+}
+html body main .search button {
+  border-radius: 15px;
+  border: 2px solid white;
+  font-size: 22px;
+  background-color: darkred;
+  padding: 10px 15px;
+  width: 150px;
+  color: white;
+}
+html body main #noResults {
+  display: none;
+  text-align: center;
+  color: grey;
+  font-size: 22px;
+  margin-top: 120px;
+}
+html body main .container {
+  display: flex;
+  margin-top: 30px;
+  margin-left: 100px;
+  margin-right: 100px;
+  padding: 30px;
+  gap: 30px;
+  align-items: flex-start;
+}
+html body main .container img {
+  width: 300px;
+  height: 400px;
+}
+html body main .container .discription {
+  margin-top: 0;
+  flex: 1;
+}
+html body main .container .discription h3 {
+  font-size: 32px;
+  color: darkred;
+  font-weight: 800;
+  margin: 0;
+}
+html body main .container .discription .timecontainer {
+  display: none;
+}
+html body main .container .discription i {
+  margin-right: 10px;
+  color: darkred;
+}
+html body main .container .discription p {
+  font-weight: 700;
+  font-size: 24px;
+  color: white;
+}
+html body main .container .discription #Timecontainer-fightclub,
+html body main .container .discription #Timecontainer-meangirls,
+html body main .container .discription #Timecontainer-requiem,
+html body main .container .discription #Timecontainer-ratatui,
+html body main .container .discription #Timecontainer-titanik,
+html body main .container .discription #Timecontainer-oyshen,
+html body main .container .discription #Timecontainer-monsters,
+html body main .container .discription #Timecontainer-pirati,
+html body main .container .discription #Timecontainer-collectioner,
+html body main .container .discription #Timecontainer-gordost,
+html body main .container .discription #Timecontainer-sumerki,
+html body main .container .discription #Timecontainer-psycho,
+html body main .container .discription #Timecontainer-jenifer,
+html body main .container .discription #Timecontainer-diary,
+html body main .container .discription #Timecontainer-joeblack,
+html body main .container .discription #Timecontainer-interrupted,
+html body main .container .discription #Timecontainer-shrek,
+html body main .container .discription #Timecontainer-punkt,
+html body main .container .discription #Timecontainer-emily,
+html body main .container .discription #Timecontainer-siyanie,
+html body main .container .discription #Timecontainer-trup,
+html body main .container .discription #Timecontainer-pila {
+  display: flex;
+  gap: 10px;
+}
+html body main .container .discription .dates {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  width: 100%;
+  margin-bottom: 15px;
+}
+html body main .container .discription .period {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+}
+html body main .container .discription .date-btn {
+  width: auto;
+  min-width: 150px;
+  height: auto;
+  padding: 8px 12px;
+  font-size: 18px;
+  white-space: nowrap;
+  background-color: rgba(0, 0, 0, 0.5);
+  border: 2px solid white;
+  color: white;
+}
+html body main .container .discription .date-btn:hover {
+  background-color: darkred;
+  border: 2px solid darkred;
+  color: black;
+}
+html body main .container .discription .date-btn:active {
+  background-color: darkred;
+  border: 2px solid darkred;
+  color: black;
+}
+html body main .container .discription .time-btn {
+  width: 70px;
+  height: 35px;
+  gap: 10px;
+  font-size: 20px;
+  background-color: rgba(0, 0, 0, 0.5);
+  border: 2px solid white;
+  color: white;
+  margin-bottom: 3px;
+}
+html body main .container .discription .time-btn:hover {
+  border: 2px solid darkred;
+}
+html body main .container .discription .button {
+  margin-top: 0;
+  font-size: 20px;
+  width: 200px;
+  height: 50px;
+  border-radius: 30px;
+  background-color: darkred;
+  border: 1px solid darkred;
+}
+@media (max-width: 1024px) {
+  html body main .container {
+    margin-left: 60px;
+    margin-right: 30px;
+    padding: 20px;
+    gap: 20px;
+  }
+  html body main .container .img img {
+    width: 260px;
+    height: 350px;
+  }
+  html body main .container .discription h3 {
+    font-size: 28px;
+  }
+  html body main .container .discription p {
+    font-size: 20px;
+  }
+  html body main .container .discription .date-btn {
+    width: 180px;
+    font-size: 16px;
+  }
+  html body main .container .discription .time-btn {
+    width: 65px;
+    font-size: 18px;
+  }
+  html body main .container .discription .button {
+    width: 180px;
+    font-size: 18px;
+    height: 45px;
+  }
+  html body main .search input {
+    width: 280px;
+    font-size: 20px;
+  }
+  html body main .search button {
+    width: 140px;
+    font-size: 20px;
+  }
+}
+@media (max-width: 768px) {
+  html body main #noResults {
+    font-size: 20px;
+  }
+  html body main .container {
+    margin-left: 30px;
+    margin-right: 30px;
+    padding: 20px;
+    gap: 20px;
+  }
+  html body main .container .img img {
+    width: 260px;
+    height: 350px;
+  }
+  html body main .container .discription h3 {
+    font-size: 28px;
+  }
+  html body main .container .discription p {
+    font-size: 20px;
+  }
+  html body main .container .discription .dates {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+  html body main .container .discription .date-btn {
+    width: 100%;
+    font-size: 16px;
+    height: auto;
+    padding: 8px 5px;
+  }
+  html body main .container .discription .time-btn {
+    width: 65px;
+    font-size: 18px;
+  }
+  html body main .container .discription .button {
+    width: 180px;
+    font-size: 18px;
+    height: 45px;
+  }
+  html body main .search input {
+    width: 250px;
+    font-size: 20px;
+  }
+  html body main .search button {
+    width: 110px;
+    font-size: 20px;
+  }
+}
+@media (max-width: 480px) {
+  html body main #noResults {
+    font-size: 18px;
+  }
+  html body main .container {
+    display: flex;
+    flex-direction: column;
+    margin-left: 15px;
+    margin-right: 15px;
+    padding: 15px;
+    gap: 15px;
+  }
+  html body main .container .img {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+  }
+  html body main .container .img img {
+    width: 100%;
+    max-width: 280px;
+    height: auto;
+  }
+  html body main .container .discription {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+  html body main .container .discription h3 {
+    font-size: 22px;
+    text-align: center;
+    order: 0;
+  }
+  html body main .container .discription p {
+    font-size: 18px;
+  }
+  html body main .container .discription p i {
+    font-size: 18px;
+  }
+  html body main .container .discription .dates {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    order: 1;
+  }
+  html body main .container .discription .date-btn {
+    width: 100%;
+    font-size: 14px;
+    height: auto;
+    padding: 8px 5px;
+  }
+  html body main .container .discription .timecontainer {
+    display: none;
+    order: 1;
+  }
+  html body main .container .discription #Timecontainer-fightclub,
+  html body main .container .discription #Timecontainer-meangirls,
+  html body main .container .discription #Timecontainer-requiem,
+  html body main .container .discription #Timecontainer-ratatui,
+  html body main .container .discription #Timecontainer-titanik,
+  html body main .container .discription #Timecontainer-oyshen,
+  html body main .container .discription #Timecontainer-monsters,
+  html body main .container .discription #Timecontainer-pirati,
+  html body main .container .discription #Timecontainer-collectioner,
+  html body main .container .discription #Timecontainer-gordost,
+  html body main .container .discription #Timecontainer-sumerki,
+  html body main .container .discription #Timecontainer-psycho,
+  html body main .container .discription #Timecontainer-jenifer,
+  html body main .container .discription #Timecontainer-diary,
+  html body main .container .discription #Timecontainer-joeblack,
+  html body main .container .discription #Timecontainer-interrupted,
+  html body main .container .discription #Timecontainer-shrek,
+  html body main .container .discription #Timecontainer-punkt,
+  html body main .container .discription #Timecontainer-emily,
+  html body main .container .discription #Timecontainer-siyanie,
+  html body main .container .discription #Timecontainer-trup,
+  html body main .container .discription #Timecontainer-pila {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+    order: 3;
+  }
+  html body main .container .discription .time-btn {
+    width: 60px;
+    height: 35px;
+    font-size: 14px;
+  }
+  html body main .container .discription .period {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    justify-content: center;
+    order: 4;
+  }
+  html body main .container .discription .button {
+    display: block;
+    width: 200px;
+    font-size: 16px;
+    height: 45px;
+    margin-left: auto;
+    margin-right: auto;
+    order: 5;
+  }
+  html body main .search {
+    flex-direction: column;
+    align-items: center;
+  }
+  html body main .search input {
+    width: 260px;
+    font-size: 18px;
+    padding: 8px 12px;
+  }
+  html body main .search button {
+    width: 120px;
+    font-size: 18px;
+    padding: 8px 12px;
+  }
+}
+html body .modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 2000;
+  justify-content: center;
+  align-items: center;
+}
+html body .modal .modal-content {
+  background: black;
+  width: 80%;
+  max-width: 800px;
+  border-radius: 20px;
+  padding: 20px;
+  border: 2px solid darkred;
+  box-shadow: 0 0 30px rgba(139, 0, 0, 0.5);
+  position: relative;
+}
+html body .modal .modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid darkred;
+  padding-bottom: 10px;
+  margin-bottom: 20px;
+}
+html body .modal .modal-header h2 {
+  color: white;
+  margin: 0;
+}
+html body .modal .close-btn {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 28px;
+}
+html body .modal .close-btn:hover {
+  color: darkred;
+}
+html body .modal .screen {
+  background: rgba(139, 0, 0, 0.492);
+  text-align: center;
+  padding: 10px;
+  color: white;
+  border-radius: 10px;
+  margin-bottom: 30px;
+  font-weight: bold;
+}
+html body .modal .seat-grid {
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  gap: 10px;
+  margin-bottom: 30px;
+  justify-items: center;
+}
+html body .modal .seat {
+  width: 40px;
+  height: 40px;
+  background-color: white;
+  border: 1px solid grey;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 16px;
+}
+html body .modal .seat.occupied {
+  background-color: darkred;
+  border: 1px solid darkred;
+  opacity: 0.7;
+}
+html body .modal .seat.selected {
+  background-color: darkgreen;
+  border: 1px solid darkgreen;
+}
+html body .modal .seat:not(.occupied):hover {
+  border: 1px solid lightgreen;
+  background-color: lightgreen;
+  transform: scale(1.1);
+}
+html body .modal .booking-info {
+  background: rgba(128, 128, 128, 0.418);
+  padding: 15px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  color: white;
+}
+html body .modal .booking-info p {
+  margin: 5px 0;
+}
+html body .modal .confirm-btn {
+  background: darkred;
+  color: white;
+  border: none;
+  padding: 12px 30px;
+  font-size: 18px;
+  border-radius: 30px;
+  width: 100%;
+}
+html body .modal .confirm-btn:hover {
+  background: rgba(139, 0, 0, 0.51);
+}
+@media (max-width: 480px) {
+  html body .modal {
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+  }
+  html body .modal .modal-content {
+    width: 80%;
+    padding: 15px 12px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+  }
+  html body .modal .modal-header h2 {
+    font-size: 18px;
+  }
+  html body .modal .close-btn {
+    font-size: 24px;
+  }
+  html body .modal .screen {
+    font-size: 12px;
+    padding: 8px;
+    margin-bottom: 15px;
+  }
+  html body .modal .seat-grid {
+    grid-template-columns: repeat(8, minmax(35px, 42px));
+    gap: 6px;
+    margin-bottom: 20px;
+    justify-content: center;
+    padding: 5px 0;
+  }
+  html body .modal .seat {
+    width: 100%;
+    min-width: 35px;
+    max-width: 42px;
+    height: 42px;
+    font-size: 11px;
+    border-radius: 8px;
+  }
+  html body .modal .booking-info {
+    padding: 10px;
+    margin-bottom: 15px;
+    flex-shrink: 0;
+  }
+  html body .modal .booking-info p {
+    font-size: 12px;
+    margin: 3px 0;
+  }
+  html body .modal .confirm-btn {
+    font-size: 14px;
+    padding: 10px 20px;
+    flex-shrink: 0;
+  }
+}
+html body footer {
+  background: rgba(10, 7, 7, 0.95);
+  border-top: 3px solid rgba(139, 0, 0, 0.547);
+  padding: 45px 20px 25px;
+  margin-top: 60px;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+html body footer .footer-container {
+  display: flex;
+  justify-content: space-between;
+  margin: 0 auto;
+  max-width: 1000px;
+  gap: 80px;
+}
+html body footer .footer-container .footer-col {
+  flex: 1;
+  min-width: 0;
+  word-break: normal;
+  overflow-wrap: break-word;
+}
+html body footer .footer-container .footer-col h3 {
+  color: darkred;
+  font-size: 20px;
+  margin-bottom: 18px;
+}
+html body footer .footer-container .footer-col h3 i {
+  margin-right: 10px;
+  color: darkred;
+}
+html body footer .footer-container .footer-col h4 {
+  color: darkred;
+  font-size: 18px;
+  margin-bottom: 18px;
+  position: relative;
+  display: block;
+}
+html body footer .footer-container .footer-col p {
+  margin-top: 0;
+  font-size: 16px;
+  color: white;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  word-break: normal;
+  overflow-wrap: break-word;
+}
+html body footer .footer-container .footer-col p i {
+  color: darkred;
+  width: 24px;
+  font-size: 18px;
+  flex-shrink: 0;
+}
+html body footer .footer-container .footer-col ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+html body footer .footer-container .footer-col ul li {
+  margin-bottom: 12px;
+}
+html body footer .footer-container .footer-col ul li a {
+  text-decoration: none;
+  font-size: 17px;
+  color: white;
+  display: inline-block;
+  position: relative;
+}
+html body footer .footer-container .footer-col ul li a:hover {
+  color: rgba(177, 62, 62, 0.547);
+}
+html body footer .footer-container .footer-col ul li a:active {
+  color: rgba(115, 2, 2, 0.436);
+}
+html body footer .footer-down {
+  text-align: center;
+  padding-top: 28px;
+  margin-top: 35px;
+  border-top: 1px solid rgba(139, 0, 0, 0.547);
+  font-size: 16px;
+}
+html body footer .footer-down p {
+  margin: 0;
+  color: grey;
+  display: block;
+}
+@media (max-width: 1024px) {
+  html body footer .footer-container {
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    padding: 0 20px;
+    margin: 0;
+  }
+  html body footer .footer-container .footer-col {
+    width: 100%;
+    max-width: 480px;
+    text-align: center;
+  }
+  html body footer .footer-container .footer-col h3, html body footer .footer-container .footer-col h4 {
+    display: block;
+    text-align: center;
+  }
+  html body footer .footer-container .footer-col p {
+    justify-content: center;
+  }
+  html body footer .footer-container .footer-col ul {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+  }
+  html body footer .footer-container .footer-col ul li {
+    margin-bottom: 0;
+  }
+}
+@media (max-width: 768px) {
+  html body footer .footer-container {
+    gap: 25px;
+  }
+  html body footer .footer-container .footer-col h3 {
+    font-size: 18px;
+  }
+  html body footer .footer-container .footer-col h4 {
+    font-size: 16px;
+  }
+  html body footer .footer-container .footer-col p {
+    font-size: 14px;
+  }
+  html body footer .footer-container .footer-col ul li a {
+    font-size: 14px;
+  }
+  html body footer .footer-down p {
+    font-size: 12px;
+  }
+}
+@media (max-width: 480px) {
+  html body footer {
+    padding: 35px 15px 20px;
+    margin-top: 40px;
+  }
+  html body footer .footer-container {
+    gap: 20px;
+  }
+  html body footer .footer-container .footer-col {
+    max-width: 100%;
+  }
+  html body footer .footer-container .footer-col h3 {
+    font-size: 16px;
+  }
+  html body footer .footer-container .footer-col h4 {
+    font-size: 15px;
+    margin-bottom: 12px;
+  }
+  html body footer .footer-container .footer-col p {
+    font-size: 14px;
+    justify-content: center;
+  }
+  html body footer .footer-container .footer-col ul {
+    gap: 8px;
+  }
+  html body footer .footer-container .footer-col ul li a {
+    font-size: 14px;
+  }
+  html body footer .footer-down p {
+    font-size: 11px;
+  }
+}/*# sourceMappingURL=booking.css.map */

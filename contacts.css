@@ -1,0 +1,582 @@
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif, -apple-system, BlinkMacSystemFont, "Helvetica Neue", Tahoma, sans-serif;
+  margin: 0;
+  background: url(background.jpg);
+  padding-top: 100px;
+}
+
+button, input[type=submit], input[type=reset] {
+  cursor: pointer;
+  font-family: inherit;
+}
+
+button, .button, .date-btn, .time-btn, .confirm-btn {
+  background-color: darkred;
+  color: white;
+  border: 2px solid white;
+}
+
+input, textarea {
+  font-family: inherit;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+html body {
+  background: url(background.jpg);
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  padding-top: 100px;
+  margin: 0;
+}
+html body .navigation {
+  height: 70px;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.75);
+  z-index: 1000;
+  padding: 15px 0 5px 0;
+  margin: 0;
+  border-bottom: 3px solid rgba(139, 0, 0, 0.547);
+}
+html body .navigation nav {
+  display: flex;
+  justify-content: flex-end;
+  margin-right: 100px;
+}
+html body .navigation ul {
+  list-style-type: none;
+  display: inline-flex;
+  gap: 35px;
+}
+html body .navigation a {
+  text-decoration: none;
+  display: inline-block;
+  font-size: 24px;
+  font-weight: 500;
+  color: white;
+}
+html body .navigation a:hover {
+  color: rgba(177, 62, 62, 0.547);
+}
+html body .navigation a:active {
+  color: rgba(115, 2, 2, 0.436);
+}
+html body .navigation .logo-wrapper {
+  position: absolute;
+  left: 90px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+html body .navigation .logo-wrapper .logo-svg {
+  display: block;
+  transition: transform 0.3s ease;
+}
+html body .navigation .logo-wrapper .logo-svg:hover {
+  transform: scale(1.05);
+}
+html body .navigation .burger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 1001;
+}
+html body .navigation .burger span {
+  width: 28px;
+  height: 3px;
+  background: white;
+  margin: 4px 0;
+  transition: 0.3s;
+  border-radius: 3px;
+}
+html body .navigation .burger.active span:nth-child(1) {
+  transform: rotate(45deg) translate(8px, 8px);
+}
+html body .navigation .burger.active span:nth-child(2) {
+  opacity: 0;
+}
+html body .navigation .burger.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(8px, -8px);
+}
+@media (max-width: 1024px) {
+  html body .navigation .burger {
+    display: flex;
+  }
+  html body .navigation nav {
+    position: fixed;
+    top: 92px;
+    left: -100%;
+    width: 280px;
+    height: calc(100vh - 92px);
+    background: black;
+    transition: left 0.3s;
+    z-index: 1000;
+    border-right: 2px solid darkred;
+    margin-right: 0;
+  }
+  html body .navigation nav.active {
+    left: 0;
+  }
+  html body .navigation nav ul {
+    flex-direction: column;
+    padding: 30px;
+    gap: 20px;
+  }
+  html body .navigation .logo-wrapper {
+    left: 15px;
+  }
+  html body .navigation .logo-svg {
+    width: 240px;
+    height: 100px;
+  }
+}
+@media (max-width: 768px) {
+  html body .navigation .logo-svg {
+    width: 240px;
+    height: 120px;
+  }
+}
+html body main {
+  margin-top: 50px;
+}
+html body main .contacts-container {
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 0 40px;
+}
+html body main .contacts-container .title {
+  margin-bottom: 40px;
+}
+html body main .contacts-container .title h1 {
+  text-align: center;
+  color: darkred;
+  font-size: 40px;
+  font-weight: 800;
+  margin: 0 0 10px 0;
+}
+html body main .contacts-container .left {
+  display: flex;
+  gap: 50px;
+}
+html body main .contacts-container .left .contact-info {
+  flex: 1;
+  min-width: 350px;
+}
+html body main .contacts-container .left .right {
+  flex: 1;
+  min-width: 350px;
+  background: rgba(0, 0, 0, 0.5);
+  border-radius: 20px;
+  padding: 30px;
+  border: 1px solid darkred;
+}
+html body main .contacts-container .left .right h4 {
+  color: darkred;
+  font-size: 28px;
+  margin: 0 0 25px 0;
+  text-align: center;
+}
+html body main .contacts-container .left .right form p {
+  margin-bottom: 20px;
+}
+html body main .contacts-container .left .right form p .label {
+  display: block;
+  color: white;
+  font-size: 16px;
+  margin-bottom: 3px;
+}
+html body main .contacts-container .left .right form p input[type=text],
+html body main .contacts-container .left .right form p input[type=email] {
+  width: 100%;
+  padding: 12px 15px;
+  font-size: 16px;
+  background: rgb(36, 29, 29);
+  border: none;
+  border-radius: 10px;
+  color: white;
+  box-sizing: border-box;
+}
+html body main .contacts-container .left .right form p textarea {
+  width: 100%;
+  padding: 12px 15px;
+  font-size: 16px;
+  background: rgb(36, 29, 29);
+  border: none;
+  border-radius: 10px;
+  color: white;
+  box-sizing: border-box;
+}
+html body main .contacts-container .left .right form p input[type=submit],
+html body main .contacts-container .left .right form p input[type=reset] {
+  padding: 10px 25px;
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 25px;
+  margin-right: 10px;
+}
+html body main .contacts-container .left .right form p input[type=submit] {
+  background: darkred;
+  color: white;
+  border: none;
+}
+html body main .contacts-container .left .right form p input[type=reset] {
+  background: #333;
+  color: white;
+  border: none;
+}
+html body main .contacts-container .block {
+  margin-bottom: 25px;
+  padding-bottom: 15px;
+}
+html body main .contacts-container .block:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+html body main .contacts-container .block h4 {
+  color: darkred;
+  font-size: 24px;
+  margin: 0 0 10px 0;
+}
+html body main .contacts-container .block h4 i {
+  color: darkred;
+  margin-right: 15px;
+  font-size: 24px;
+}
+html body main .contacts-container .block .info {
+  color: white;
+  font-size: 20px;
+  margin-left: 30px;
+  margin-bottom: 5px;
+  font-weight: 500;
+}
+html body main .contacts-container .block > p {
+  font-size: 18px;
+  color: grey;
+  margin: 5px 0 0 30px;
+}
+html body main .contacts-container .block .mnd-thd,
+html body main .contacts-container .block .frd-snd {
+  display: flex;
+  justify-content: flex-start;
+  align-items: baseline;
+  gap: 10px;
+  margin-left: 30px;
+  padding: 5px 0;
+}
+html body main .contacts-container .block .mnd-thd p,
+html body main .contacts-container .block .frd-snd p {
+  margin: 0;
+  font-size: 18px;
+}
+html body main .contacts-container .block .mnd-thd p:first-child,
+html body main .contacts-container .block .frd-snd p:first-child {
+  color: white;
+  width: 220px;
+}
+html body main .contacts-container .block .mnd-thd p:last-child,
+html body main .contacts-container .block .frd-snd p:last-child {
+  color: white;
+  font-weight: 500;
+}
+@media (max-width: 1024px) {
+  html body main .contacts-container {
+    padding: 0 30px;
+  }
+  html body main .contacts-container .left {
+    flex-direction: column;
+    gap: 40px;
+  }
+  html body main .contacts-container .left .contact-info {
+    padding: 0 50px;
+  }
+  html body main .contacts-container .left .right {
+    min-width: auto;
+    max-width: 600px;
+    margin: 0 auto;
+    width: 100%;
+    box-sizing: border-box;
+  }
+}
+@media (max-width: 768px) {
+  html body main {
+    margin-top: 30px;
+  }
+  html body main .contacts-container {
+    padding: 0 20px;
+  }
+  html body main .contacts-container .title {
+    margin-bottom: 30px;
+  }
+  html body main .contacts-container .title h1 {
+    font-size: 32px;
+  }
+  html body main .contacts-container .left {
+    gap: 35px;
+  }
+  html body main .contacts-container .left .contact-info {
+    padding: 0 55px;
+  }
+  html body main .contacts-container .left .contact-info .block h4 {
+    font-size: 20px;
+  }
+  html body main .contacts-container .left .contact-info .block h4 i {
+    font-size: 20px;
+    margin-right: 12px;
+  }
+  html body main .contacts-container .left .contact-info .block .info {
+    font-size: 18px;
+    margin-left: 20px;
+  }
+  html body main .contacts-container .left .contact-info .block > p {
+    font-size: 16px;
+    margin-left: 20px;
+  }
+  html body main .contacts-container .left .contact-info .block .mnd-thd,
+  html body main .contacts-container .left .contact-info .block .frd-snd {
+    margin-left: 20px;
+    gap: 8px;
+  }
+  html body main .contacts-container .left .contact-info .block .mnd-thd p,
+  html body main .contacts-container .left .contact-info .block .frd-snd p {
+    font-size: 16px;
+  }
+  html body main .contacts-container .left .contact-info .block .mnd-thd p:first-child,
+  html body main .contacts-container .left .contact-info .block .frd-snd p:first-child {
+    width: 180px;
+  }
+  html body main .contacts-container .left .right {
+    padding: 25px 20px;
+  }
+  html body main .contacts-container .left .right h4 {
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+  html body main .contacts-container .left .right form p .label {
+    font-size: 15px;
+  }
+  html body main .contacts-container .left .right form p input[type=text],
+  html body main .contacts-container .left .right form p input[type=email],
+  html body main .contacts-container .left .right form p textarea {
+    padding: 10px 12px;
+    font-size: 15px;
+  }
+  html body main .contacts-container .left .right form p input[type=submit],
+  html body main .contacts-container .left .right form p input[type=reset] {
+    padding: 8px 20px;
+    font-size: 15px;
+  }
+}
+@media (max-width: 480px) {
+  html body main {
+    margin-top: 20px;
+  }
+  html body main .contacts-container {
+    padding: 0 15px;
+  }
+  html body main .contacts-container .title {
+    margin-bottom: 25px;
+  }
+  html body main .contacts-container .title h1 {
+    font-size: 28px;
+  }
+  html body main .contacts-container .left {
+    gap: 30px;
+  }
+  html body main .contacts-container .left .contact-info {
+    padding: 0 15px;
+  }
+  html body main .contacts-container .left .contact-info .block {
+    margin-bottom: 20px;
+    padding-bottom: 12px;
+  }
+  html body main .contacts-container .left .contact-info .block h4 {
+    font-size: 18px;
+  }
+  html body main .contacts-container .left .contact-info .block h4 i {
+    font-size: 18px;
+    margin-right: 10px;
+  }
+  html body main .contacts-container .left .contact-info .block .info {
+    font-size: 16px;
+    margin-left: 15px;
+    word-break: break-word;
+  }
+  html body main .contacts-container .left .contact-info .block > p {
+    font-size: 14px;
+    margin-left: 15px;
+  }
+  html body main .contacts-container .left .contact-info .block .mnd-thd,
+  html body main .contacts-container .left .contact-info .block .frd-snd {
+    margin-left: 15px;
+    flex-direction: column;
+    gap: 3px;
+  }
+  html body main .contacts-container .left .contact-info .block .mnd-thd p,
+  html body main .contacts-container .left .contact-info .block .frd-snd p {
+    font-size: 14px;
+  }
+  html body main .contacts-container .left .contact-info .block .mnd-thd p:first-child,
+  html body main .contacts-container .left .contact-info .block .frd-snd p:first-child {
+    width: auto;
+  }
+  html body main .contacts-container .left .contact-info .block > p:last-child {
+    font-size: 14px;
+  }
+  html body main .contacts-container .left .right {
+    padding: 20px 15px;
+  }
+  html body main .contacts-container .left .right h4 {
+    font-size: 20px;
+    margin-bottom: 18px;
+  }
+  html body main .contacts-container .left .right form p {
+    margin-bottom: 15px;
+  }
+  html body main .contacts-container .left .right form p .label {
+    font-size: 14px;
+  }
+  html body main .contacts-container .left .right form p input[type=text],
+  html body main .contacts-container .left .right form p input[type=email],
+  html body main .contacts-container .left .right form p textarea {
+    padding: 8px 10px;
+    font-size: 14px;
+  }
+  html body main .contacts-container .left .right form p input[type=submit],
+  html body main .contacts-container .left .right form p input[type=reset] {
+    padding: 6px 16px;
+    font-size: 14px;
+    margin-right: 8px;
+  }
+}
+html body footer {
+  background: rgba(10, 7, 7, 0.95);
+  border-top: 3px solid rgba(139, 0, 0, 0.547);
+  padding: 45px 20px 25px;
+  margin-top: 60px;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+html body footer .footer-container {
+  display: flex;
+  justify-content: space-around;
+  margin: 0 auto;
+  max-width: 1000px;
+  gap: 80px;
+}
+html body footer .footer-container .footer-col {
+  flex: 1;
+}
+html body footer .footer-container .footer-col h3 {
+  color: darkred;
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 18px;
+}
+html body footer .footer-container .footer-col h3 i {
+  margin-right: 10px;
+  color: darkred;
+}
+html body footer .footer-container .footer-col h4 {
+  color: darkred;
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 18px;
+  position: relative;
+  display: inline-block;
+}
+html body footer .footer-container .footer-col p {
+  margin-top: 0;
+  font-size: 16px;
+  color: white;
+}
+html body footer .footer-container .footer-col p i {
+  margin-right: 10px;
+  color: darkred;
+  width: 24px;
+  font-size: 18px;
+}
+html body footer .footer-container .footer-col ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+html body footer .footer-container .footer-col ul li {
+  margin-bottom: 12px;
+}
+html body footer .footer-container .footer-col ul li a {
+  text-decoration: none;
+  font-size: 17px;
+  color: white;
+  display: inline-block;
+  position: relative;
+}
+html body footer .footer-container .footer-col ul li a:hover {
+  color: rgba(177, 62, 62, 0.547);
+}
+html body footer .footer-container .footer-col ul li a:active {
+  color: rgba(115, 2, 2, 0.436);
+}
+html body footer .footer-down {
+  text-align: center;
+  padding-top: 28px;
+  margin-top: 35px;
+  border-top: 1px solid rgba(139, 0, 0, 0.547);
+  font-size: 16px;
+}
+html body footer .footer-down p {
+  margin: 0;
+  color: grey;
+}
+@media (max-width: 1024px) {
+  html body footer .footer-container {
+    flex-direction: column;
+    text-align: center;
+    gap: 30px;
+    padding: 0 20px;
+    margin: 0;
+  }
+  html body footer .footer-container .footer-col {
+    width: 100%;
+  }
+  html body footer .footer-container .footer-col h3, html body footer .footer-container .footer-col h4 {
+    display: block;
+    text-align: center;
+  }
+  html body footer .footer-container .footer-col ul {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+  }
+  html body footer .footer-container .footer-col ul li {
+    margin-bottom: 0;
+  }
+  html body footer .footer-container .footer-col p {
+    text-align: center;
+  }
+}
+@media (max-width: 768px) {
+  html body footer .footer-container {
+    gap: 25px;
+  }
+  html body footer .footer-container .footer-col h3 {
+    font-size: 18px;
+  }
+  html body footer .footer-container .footer-col h4 {
+    font-size: 16px;
+  }
+  html body footer .footer-container .footer-col p {
+    font-size: 14px;
+  }
+  html body footer .footer-container .footer-col ul li a {
+    font-size: 14px;
+  }
+  html body footer .footer-down p {
+    font-size: 12px;
+  }
+}/*# sourceMappingURL=contacts.css.map */

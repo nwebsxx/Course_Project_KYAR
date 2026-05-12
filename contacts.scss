@@ -1,0 +1,564 @@
+@import "_values.scss";
+@import "_crossbrowser.scss";
+
+html {
+    scroll-behavior: smooth;
+
+body {
+    background: url(background.jpg);
+    font-family: $segoe;
+    padding-top: 100px;
+    margin: 0;
+    .navigation {
+        height: 70px;
+        position: fixed;
+        top: 0;
+        width: 100%;
+        background: rgba(0, 0, 0, 0.75);
+        z-index: 1000;
+        padding: 15px 0 5px 0;
+        margin: 0;
+        border-bottom: 3px solid $border-top-bottom;
+        nav {
+            display: flex;
+            justify-content: flex-end;
+            margin-right: 100px;
+        }
+        ul {
+            list-style-type: none;
+            display: inline-flex;
+            gap: 35px;
+        }
+        a {
+            text-decoration: none;
+            display: inline-block;
+            font-size: 24px;
+            font-weight: 500;
+            color: white;
+            &:hover {
+                color: $a-hover;
+            }
+            &:active {
+                color: $a-active;
+            }
+        }
+        .logo-wrapper {
+            position: absolute;
+            left: 90px;
+            top: 50%;
+            transform: translateY(-50%);
+            .logo-svg {
+                display: block;
+                transition: transform 0.3s ease;
+                &:hover {
+                    transform: scale(1.05);
+                }
+            }
+        }
+        .burger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            position: absolute;
+            right: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 1001;
+            span {
+                width: 28px;
+                height: 3px;
+                background: $white;
+                margin: 4px 0;
+                transition: 0.3s;
+                border-radius: 3px;
+            }
+            &.active {
+                span:nth-child(1) {
+                    transform: rotate(45deg) translate(8px, 8px);
+                }
+                span:nth-child(2) {
+                    opacity: 0;
+                }
+                span:nth-child(3) {
+                    transform: rotate(-45deg) translate(8px, -8px);
+                }
+            }
+        }
+        @media (max-width: 1024px) {
+            .burger {
+                display: flex;
+            }
+            nav {
+                position: fixed;
+                top: 92px;
+                left: -100%;
+                width: 280px;
+                height: calc(100vh - 92px);
+                background: $black;
+                transition: left 0.3s;
+                z-index: 1000;
+                border-right: 2px solid $darkred;
+                margin-right: 0;
+                &.active {
+                    left: 0;
+                }
+                ul {
+                    flex-direction: column;
+                    padding: 30px;
+                    gap: 20px;
+                }
+            }
+            .logo-wrapper {
+                left: 15px;
+            }
+            .logo-svg {
+                width: 240px;
+                height: 100px;
+            }
+        }
+        @media (max-width: 768px) {
+            .logo-svg {
+                width: 240px;
+                height: 120px;
+            }
+        }
+    }
+    main {
+        margin-top: 50px;
+        .contacts-container {
+            max-width: 1300px;
+            margin: 0 auto;
+            padding: 0 40px;
+            .title {
+                margin-bottom: 40px;
+                h1 {
+                    text-align: center;
+                    color: $darkred;
+                    font-size: 40px;
+                    font-weight: 800;
+                    margin: 0 0 10px 0;
+                }
+            }
+            .left {
+                display: flex;
+                gap: 50px;
+                .contact-info {
+                    flex: 1;
+                    min-width: 350px;
+                }
+                .right {
+                    flex: 1;
+                    min-width: 350px;
+                    background: $clear;
+                    border-radius: 20px;
+                    padding: 30px;
+                    border: 1px solid $darkred;
+                    h4 {
+                        color: $darkred;
+                        font-size: 28px;
+                        margin: 0 0 25px 0;
+                        text-align: center;
+                    }
+                    form p {
+                        margin-bottom: 20px;
+                        .label {
+                            display: block;
+                            color: $white;
+                            font-size: 16px;
+                            margin-bottom: 3px;
+                        }
+                        input[type="text"],
+                        input[type="email"] {
+                            width: 100%;
+                            padding: 12px 15px;
+                            font-size: 16px;
+                            background: $form-back;
+                            border: none;
+                            border-radius: 10px;
+                            color: $white;
+                            box-sizing: border-box;
+                        }
+                        textarea {
+                            width: 100%;
+                            padding: 12px 15px;
+                            font-size: 16px;
+                            background: $form-back;
+                            border: none;
+                            border-radius: 10px;
+                            color: $white;
+                            box-sizing: border-box;
+                        }
+                        input[type="submit"],
+                        input[type="reset"] {
+                            padding: 10px 25px;
+                            font-size: 16px;
+                            font-weight: bold;
+                            border-radius: 25px;
+                            margin-right: 10px;
+                        }
+                        input[type="submit"] {
+                            background: $darkred;
+                            color: $white;
+                            border: none;
+                        }
+                        input[type="reset"] {
+                            background: #333;
+                            color: $white;
+                            border: none;
+                        }
+                    }
+                }
+            }
+            .block {
+                margin-bottom: 25px;
+                padding-bottom: 15px;
+                &:last-child {
+                    border-bottom: none;
+                    margin-bottom: 0;
+                    padding-bottom: 0;
+                }
+                h4 {
+                    color: $darkred;
+                    font-size: 24px;
+                    margin: 0 0 10px 0;
+                    i {
+                        color: $darkred;
+                        margin-right: 15px;
+                        font-size: 24px;
+                    }
+                }
+                .info {
+                    color: $white;
+                    font-size: 20px;
+                    margin-left: 30px;
+                    margin-bottom: 5px;
+                    font-weight: 500;
+                }
+                > p {
+                    font-size: 18px;
+                    color: $grey;
+                    margin: 5px 0 0 30px;
+                }
+                .mnd-thd,
+                .frd-snd {
+                    display: flex;
+                    justify-content: flex-start;
+                    align-items: baseline;
+                    gap: 10px;
+                    margin-left: 30px;
+                    padding: 5px 0;
+                    p {
+                        margin: 0;
+                        font-size: 18px;
+                        &:first-child {
+                            color: $white;
+                            width: 220px;
+                        }
+                        &:last-child {
+                            color: $white;
+                            font-weight: 500;
+                        }
+                    }
+                }
+            }
+        }
+        @media (max-width: 1024px) {
+            .contacts-container {
+                padding: 0 30px;
+                .left {
+                    flex-direction: column;
+                    gap: 40px;
+                    .contact-info {
+                        padding: 0 50px;
+                    }
+                    .right {
+                        min-width: auto;
+                        max-width: 600px;
+                        margin: 0 auto;
+                        width: 100%;
+                        box-sizing: border-box;
+                    }
+                }
+            }
+        }
+        @media (max-width: 768px) {
+            margin-top: 30px;
+            .contacts-container {
+                padding: 0 20px;
+                .title {
+                    margin-bottom: 30px;
+                    h1 {
+                        font-size: 32px;
+                    }
+                }
+                .left {
+                    gap: 35px;
+                    .contact-info {
+                        padding: 0 55px;
+                        .block {
+                            h4 {
+                                font-size: 20px;
+                                i {
+                                    font-size: 20px;
+                                    margin-right: 12px;
+                                }
+                            }
+                            .info {
+                                font-size: 18px;
+                                margin-left: 20px;
+                            }
+                            > p {
+                                font-size: 16px;
+                                margin-left: 20px;
+                            }
+                            .mnd-thd,
+                            .frd-snd {
+                                margin-left: 20px;
+                                gap: 8px;
+                                p {
+                                    font-size: 16px;
+                                    &:first-child {
+                                        width: 180px;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    .right {
+                        padding: 25px 20px;
+                        h4 {
+                            font-size: 24px;
+                            margin-bottom: 20px;
+                        }
+                        form p {
+                            .label {
+                                font-size: 15px;
+                            }
+                            input[type="text"],
+                            input[type="email"],
+                            textarea {
+                                padding: 10px 12px;
+                                font-size: 15px;
+                            }
+                            input[type="submit"],
+                            input[type="reset"] {
+                                padding: 8px 20px;
+                                font-size: 15px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        @media (max-width: 480px) {
+            margin-top: 20px;
+            .contacts-container {
+                padding: 0 15px;
+                .title {
+                    margin-bottom: 25px;
+                    h1 {
+                        font-size: 28px;
+                    }
+                }
+                .left {
+                    gap: 30px;
+                    .contact-info {
+                        padding: 0 15px;
+                        .block {
+                            margin-bottom: 20px;
+                            padding-bottom: 12px;
+                            h4 {
+                                font-size: 18px;
+                                i {
+                                    font-size: 18px;
+                                    margin-right: 10px;
+                                }
+                            }
+                            .info {
+                                font-size: 16px;
+                                margin-left: 15px;
+                                word-break: break-word;
+                            }
+                            > p {
+                                font-size: 14px;
+                                margin-left: 15px;
+                            }
+                            .mnd-thd,
+                            .frd-snd {
+                                margin-left: 15px;
+                                flex-direction: column;
+                                gap: 3px;
+                                p {
+                                    font-size: 14px;
+                                    &:first-child {
+                                        width: auto;
+                                    }
+                                }
+                            }
+                            > p:last-child {
+                                font-size: 14px;
+                            }
+                        }
+                    }
+                    .right {
+                        padding: 20px 15px;
+                        h4 {
+                            font-size: 20px;
+                            margin-bottom: 18px;
+                        }
+                        form p {
+                            margin-bottom: 15px;
+                            .label {
+                                font-size: 14px;
+                            }
+                            input[type="text"],
+                            input[type="email"],
+                            textarea {
+                                padding: 8px 10px;
+                                font-size: 14px;
+                            }
+                            input[type="submit"],
+                            input[type="reset"] {
+                                padding: 6px 16px;
+                                font-size: 14px;
+                                margin-right: 8px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    footer {
+        background: $footer-back;
+        border-top: 3px solid $border-top-bottom;
+        padding: 45px 20px 25px;
+        margin-top: 60px;
+        font-family: $segoe;
+        .footer-container {
+            display: flex;
+            justify-content: space-around;
+            margin: 0 auto;
+            max-width: 1000px;
+            gap: 80px;
+            .footer-col {
+                flex: 1;
+                h3 {
+                    color: $darkred;
+                    font-size: 20px;
+                    font-weight: 700;
+                    margin-bottom: 18px;
+                    i {
+                        margin-right: 10px;
+                        color: $darkred;
+                    }
+                }
+                h4 {
+                    color: $darkred;
+                    font-size: 18px;
+                    font-weight: 600;
+                    margin-bottom: 18px;
+                    position: relative;
+                    display: inline-block;
+                }
+                p {
+                    margin-top: 0;
+                    font-size: 16px;
+                    color: $white;
+                    i {
+                        margin-right: 10px;
+                        color: $darkred;
+                        width: 24px;
+                        font-size: 18px;
+                    }
+                }
+                ul {
+                    list-style: none;
+                    padding: 0;
+                    margin: 0;
+                    li {
+                        margin-bottom: 12px;
+                        a {
+                            text-decoration: none;
+                            font-size: 17px;
+                            color: $white;
+                            display: inline-block;
+                            position: relative;
+                            &:hover {
+                               color: $a-hover;
+                            }
+                            &:active {
+                               color: $a-active;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        .footer-down {
+            text-align: center;
+            padding-top: 28px;
+            margin-top: 35px;
+            border-top: 1px solid $border-top-bottom;
+            font-size: 16px;
+            p {
+                margin: 0;
+                color: $grey;
+            }
+        }
+        @media (max-width: 1024px) {
+            .footer-container {
+                flex-direction: column;
+                text-align: center;
+                gap: 30px;
+                padding: 0 20px;
+                margin: 0;
+                .footer-col {
+                    width: 100%;
+                    h3, h4 {
+                        display: block;
+                        text-align: center;
+                    }
+                    ul {
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
+                        gap: 12px;
+                        li {
+                            margin-bottom: 0;
+                        }
+                    }
+                    p {
+                        text-align: center;
+                    }
+                }
+            }
+        }
+        @media (max-width: 768px) {
+            .footer-container {
+                gap: 25px;
+                .footer-col {
+                    h3 {
+                        font-size: 18px;
+                    }
+                    h4 {
+                        font-size: 16px;
+                    }
+                    p {
+                        font-size: 14px;
+                    }
+                    ul li a {
+                        font-size: 14px;
+                    }
+                }
+            }
+            .footer-down p {
+                font-size: 12px;
+            }
+        }
+    }
+}
+}
+
+
+

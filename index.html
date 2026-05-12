@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Главная</title>
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="navigation">
+            <div class="burger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+
+            <div class="logo-wrapper">
+                <a href="index.html">
+                <svg class="logo-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 280 70" width="280" height="70">
+                    <defs>
+                        <linearGradient id="lensGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" style="stop-color:#ff2a2a;stop-opacity:1" />
+                            <stop offset="100%" style="stop-color:#aa0000;stop-opacity:1" />
+                        </linearGradient>
+                        <linearGradient id="lensInner" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" style="stop-color:#d00000;stop-opacity:0.9" />
+                            <stop offset="100%" style="stop-color:#6b0000;stop-opacity:0.95" />
+                        </linearGradient>
+                        <filter id="shadowLight" x="-20%" y="-20%" width="140%" height="140%">
+                            <feDropShadow dx="1" dy="1" stdDeviation="1" flood-color="#440000" flood-opacity="0.6"/>
+                        </filter>
+                    </defs>
+                    <rect width="280" height="70" fill="transparent" />
+                    <g transform="translate(12, 8)">
+                        <rect x="0" y="0" width="10" height="52" rx="2.5" fill="#c92020" filter="url(#shadowLight)"/>
+                        <line x1="7.5" y1="42" x2="38" y2="54" stroke="#c92020" stroke-width="10" stroke-linecap="round" />
+                        <path d="M10,0 L10,0 A 24,24 0 0,1 10,42 L10,42" fill="none" stroke="#c92020" stroke-width="10" stroke-linecap="round" />
+                        <circle cx="22" cy="21" r="12.5" fill="none" stroke="#0b0b0b" stroke-width="3" />
+                        <circle cx="22" cy="21" r="10.5" fill="none" stroke="url(#lensGrad)" stroke-width="2.2" />
+                        <circle cx="22" cy="21" r="8" fill="url(#lensInner)" />
+                        <ellipse cx="17.5" cy="17" rx="3.2" ry="2.2" fill="white" opacity="0.35" transform="rotate(-35 17.5 17)" />
+                        <circle cx="18.2" cy="16.5" r="1.2" fill="white" opacity="0.6" />
+                        <circle cx="22" cy="21" r="3.5" fill="#0a0a0a" />
+                        <circle cx="22" cy="21" r="1.6" fill="#e63e3e" opacity="0.9" />
+                    </g>
+                    <text x="70" y="34" font-family="'Segoe UI', Tahoma, Geneva, Verdana, sans-serif" font-size="15" font-weight="800" fill="#e60000" letter-spacing="3.5" dominant-baseline="middle">
+                        REDROOM
+                    </text>
+                    <text x="70" y="48" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10" font-weight="400" fill="#e60000" letter-spacing="5" dominant-baseline="middle">
+                        HALL
+                    </text>
+                </svg>
+                </a>
+            </div>
+
+            <nav>
+                <ul>
+                    <li><a href="posters.html">Афиша</a></li>
+                    <li><a href="booking.html">Онлайн-бронирование билетов</a></li>
+                    <li><a href="info.html">Инфо</a></li>
+                    <li><a href="contacts.html">Контакты</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+
+        <section class="hero">
+            <div class="hero-overlay"></div>
+            <div class="hero-scanlines"></div>
+            <div class="hero-content">
+                <h1 class="hero-title">
+                    <span class="hero-red">REDROOM</span>
+                    <span class="hero-white">HALL</span>
+                </h1>
+                <p class="hero-subtitle">Золотая эра кино 1990–2000-х на большом экране</p>
+                <div class="hero-buttons">
+                    <a href="posters.html" class="btn-primary">
+                        <i class="fas fa-ticket-alt"></i> Смотреть афишу
+                    </a>
+                    <a href="info.html" class="btn-outline">
+                        <i class="fas fa-info-circle"></i> О кинотеатре
+                    </a>
+                </div>
+                
+            </div>
+        </section>
+        <section class="now-showing">
+            <div class="section-header">
+                
+                <h2 class="section-title">Сейчас в прокате</h2>
+            </div>
+
+            <div class="slider-wrapper">
+                <button class="slider-arrow arrow-left" id="arrowLeft" aria-label="Назад">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+
+                <div class="slider-viewport">
+                    <div class="slider-track" id="sliderTrack">
+
+                        <div class="movie-card">
+                            <div class="movie-poster">
+                                <img src="afisha1.jpg" alt="fightclub">
+                            </div>
+                            <div class="movie-info">
+                                <h3>Бойцовский клуб</h3>
+                                <p class="movie-genre">Преступление / триллер</p>
+                                <a href="booking.html" class="btn-choose">Выбрать фильм</a>
+                            </div>
+                        </div>
+
+                        <div class="movie-card">
+                            <div class="movie-poster">
+                               <img src="afisha18.jpg" alt="punkt">
+                            </div>
+                            <div class="movie-info">
+                                <h3>Пункт назначения</h3>
+                                <p class="movie-genre">Ужасы / фантастика</p>
+                                <a href="booking.html" class="btn-choose">Выбрать фильм</a>
+                            </div>
+                        </div>
+
+                        <div class="movie-card">
+                            <div class="movie-poster">
+                                <img src="afisha3.jpg" alt="requiem">
+                            </div>
+                            <div class="movie-info">
+                                <h3>Реквием по мечте</h3>
+                                <p class="movie-genre">Преступление / триллер</p>
+                                <a href="booking.html" class="btn-choose">Выбрать фильм</a>
+                            </div>
+                        </div>
+
+                        <div class="movie-card">
+                            <div class="movie-poster">
+                               <img src="afisha9.jpg" alt="collectioner">
+                            </div>
+                            <div class="movie-info">
+                                <h3>Коллекционер 2</h3>
+                                <p class="movie-genre">Ужасы / триллер</p>
+                                <a href="booking.html" class="btn-choose">Выбрать фильм</a>
+                            </div>
+                        </div>
+
+                        <div class="movie-card">
+                            <div class="movie-poster">
+                               <img src="afisha5.jpg" alt="titanik">
+                            </div>
+                            <div class="movie-info">
+                                <h3>Титаник</h3>
+                                <p class="movie-genre">Драма / история</p>
+                                <a href="booking.html" class="btn-choose">Выбрать фильм</a>
+                            </div>
+                        </div>
+
+                        <div class="movie-card">
+                            <div class="movie-poster">
+                                <img src="afisha22.jpg" alt="pila">
+                            </div>
+                            <div class="movie-info">
+                                <h3>Пила 2</h3>
+                                <p class="movie-genre">Ужасы / преступление </p>
+                                <a href="booking.html" class="btn-choose">Выбрать фильм</a>
+                            </div>
+                        </div>
+
+                        <div class="movie-card">
+                            <div class="movie-poster">
+                                <img src="afisha11.jpg" alt="sumerki">
+                            </div>
+                            <div class="movie-info">
+                                <h3>Сумерки. Сага. Новолуние</h3>
+                                <p class="movie-genre">Фэнтези / драма </p>
+                                <a href="booking.html" class="btn-choose">Выбрать фильм</a>
+                            </div>
+                        </div>
+
+                        <div class="movie-card">
+                            <div class="movie-poster">
+                                <img src="afisha13.jpg" alt="jenifer">
+                            </div>
+                            <div class="movie-info">
+                                <h3>Тело Дженифер</h3>
+                                <p class="movie-genre">Ужасы / комедия</p>
+                                <a href="booking.html" class="btn-choose">Выбрать фильм</a>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <button class="slider-arrow arrow-right" id="arrowRight" aria-label="Вперёд">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+            </div>
+
+           
+        </section>
+        <section class="why-us">
+            <div class="section-header">
+                <h2 class="section-title">Почему REDROOM HALL?</h2>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon"><i class="fas fa-film"></i></div>
+                    <h3>Только хиты эпохи</h3>
+                    <p>90–2000-е — золотое время Голливуда. Только те фильмы, которые стали легендами.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon"><i class="fas fa-volume-up"></i></div>
+                    <h3>Dolby Digital</h3>
+                    <p>Звук, который погружает. Каждый взрыв, каждый шёпот — как будто вы там.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon"><i class="fas fa-couch"></i></div>
+                    <h3>Залы в стиле нулевых</h3>
+                    <p>Интерьер, который возвращает в то время. Кресла с подстаканниками, атмосфера эпохи.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon"><i class="fas fa-wine-glass-alt"></i></div>
+                    <h3>Бар & попкорн</h3>
+                    <p>Классический попкорн, начос, напитки и кофе — всё как в любимых кинотеатрах детства.</p>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-col">
+                <h3><i class="fas fa-film"></i> REDROOM HALL</h3>
+                <p>Кинотеатр, посвящённый золотой эре кино 1990-2000-х годов. Фильмы, которые сформировали поколение.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Быстрые ссылки</h4>
+                <ul>
+                    <li><a href="posters.html">Афиша</a></li>
+                    <li><a href="booking.html">Онлайн-бронирование билетов</a></li>
+                    <li><a href="info.html">Инфо</a></li>
+                    <li><a href="contacts.html">Контакты</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Контакты</h4>
+                <p><i class="fas fa-phone-alt"></i> +375 (29) 106-94-55</p>
+                <p><i class="fas fa-envelope"></i> redroomhall@gmail.com</p>
+            </div>
+        </div>
+        <div class="footer-down">
+            <p>© 2026 REDROOM HALL | Все права защищены | Сайт создан с любовью для ценителей кино</p>
+        </div>
+    </footer>
+
+    <script src="burgermenu.js"></script>
+    <script src="index.js"></script>
+</body>
+</html>

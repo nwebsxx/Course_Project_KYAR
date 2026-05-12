@@ -1,0 +1,25 @@
+
+@import "_values.scss";
+body {
+  font-family: $segoe, -apple-system, BlinkMacSystemFont,
+    "Helvetica Neue", Tahoma, sans-serif;
+  margin: 0;
+  background: url(background.jpg);
+  padding-top: 100px;
+}
+
+button, input[type="submit"], input[type="reset"] {
+  cursor: pointer;
+  font-family: inherit;
+  
+}
+
+button, .button, .date-btn, .time-btn, .confirm-btn {
+  background-color: $darkred;         
+  color: $white;                       
+  border: 2px solid $white;           
+}
+
+input, textarea {
+  font-family: inherit;
+}
